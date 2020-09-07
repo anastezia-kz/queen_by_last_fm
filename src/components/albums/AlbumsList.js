@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import { Link } from 'react-router-dom';
 import {getAlbums, sortAlbums} from '../../store/albums/albumsActions'
+import Search from '../../components/albums/Search'
 
 
 
@@ -10,7 +11,7 @@ const AlbumsList = ({ artistName }) => {
   const dispatch = useDispatch()
 
   //Dispatch  
-  const albums = useSelector(state => state.albums)
+  const albums = useSelector(state => state.albums.searchedAlbums)
 
   useEffect(() => {
     dispatch(getAlbums(artistName))
@@ -24,11 +25,15 @@ const AlbumsList = ({ artistName }) => {
   };
 
   return (
-    <>
+    
+    <div>
       <h2>Top Albums</h2>
+      <div className='controls'>
       <button onClick={sortAllAlbums} className='btn'>
         Sort
       </button>
+      <Search/>
+      </div>
       <div className='content'>
         <ul>
           {albums.map((album) => (
@@ -41,7 +46,8 @@ const AlbumsList = ({ artistName }) => {
           ))}
         </ul>
       </div>
-    </>
+      </div>
+    
   );
 };
 

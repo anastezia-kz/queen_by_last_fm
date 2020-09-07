@@ -12,10 +12,20 @@ body {
   width: 15px;
   height: 15px;
 }
-
+.controls{
+  display:flex;
+  justify-content: space-around;
+}
+.search-form{
+  background: white;
+  color: #333;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: blueviolet solid 1px ;
+}
 .btn {
   display: inline-block;
-  background: var(--light-color);
+  background: white;
   color: #333;
   padding: 0.4rem 1.3rem;
   font-size: 1rem;

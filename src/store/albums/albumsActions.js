@@ -1,4 +1,4 @@
-import { GET_ABLUMS, SORT_ALBUMS, SEARCH_ABLUMS } from './albumsActionTypes';
+import { GET_ABLUMS, SORT_ALBUMS, SEARCH_ABLUMS, CLEAR_SEARCH } from './albumsActionTypes';
 import axios from 'axios';
 
 const getAlbums = (artistName) => async (dispatch) => {
@@ -18,4 +18,13 @@ const getAlbums = (artistName) => async (dispatch) => {
 const sortAlbums = () => ({
     type:SORT_ALBUMS
 })
-export { getAlbums, sortAlbums };
+
+const searchAlbums = (value) => ({
+    type:SEARCH_ABLUMS,
+    payload: value
+})
+
+const clearSearch = () => ({
+    type:CLEAR_SEARCH
+})
+export { getAlbums, sortAlbums, searchAlbums, clearSearch };
