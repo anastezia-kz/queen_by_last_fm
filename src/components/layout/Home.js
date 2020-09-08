@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-//import styled, {css} from 'styled-components'
 import Spinner from './Spinner';
 
 import axios from 'axios';
 import AlbumsList from '../albums/AlbumsList';
+
+import { GridWrapper, ContentWrapper } from '../styled/MainWrapper';
 
 const Home = () => {
   const artistName = 'Queen';
@@ -30,15 +31,17 @@ const Home = () => {
         <Spinner />
       ) : (
         <>
-          <div className='grid-2'>
+          <GridWrapper>
             <div>
-              <h1>{artistInfo.name}</h1>
-              <div className="content" dangerouslySetInnerHTML={{ __html: artistInfo.bio }}></div>
+              <ContentWrapper>
+                <h1>{artistInfo.name}</h1>
+                <div dangerouslySetInnerHTML={{ __html: artistInfo.bio }}></div>
+              </ContentWrapper>
             </div>
             <div>
               <AlbumsList artistName={artistName} />
             </div>
-          </div>
+          </GridWrapper>
         </>
       )}
     </>
