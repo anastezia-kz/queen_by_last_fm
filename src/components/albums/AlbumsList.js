@@ -6,14 +6,14 @@ import Search from '../../components/albums/Search';
 import {
   AlbumsWrapper,
   Controls,
-  SortButton,
+  Button,
   ContentWrapper,
 } from '../styled/MainWrapper';
 
 const AlbumsList = ({ artistName }) => {
   const dispatch = useDispatch();
 
-  //Dispatch
+
   const albums = useSelector((state) => state.albums.searchedAlbums);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const AlbumsList = ({ artistName }) => {
   return (
     <ContentWrapper>
       <Controls>
-        <SortButton onClick={sortAllAlbums}>Sort Albums</SortButton>
+        <Button onClick={sortAllAlbums}>Sort Albums</Button>
         <Search />
       </Controls>
 

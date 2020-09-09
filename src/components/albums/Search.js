@@ -1,6 +1,9 @@
 import React, { useRef, useEffect } from 'react';
 import { searchAlbums, clearSearch } from '../../store/albums/albumsActions';
 import { useDispatch, useSelector } from 'react-redux';
+import {SearchInput} from '../styled/MainWrapper'
+
+
 
 const Search = () => {
   const dispatch = useDispatch();
@@ -20,15 +23,14 @@ const Search = () => {
   };
 
   return (
-    <form >
-      <input
-      className='search-form'
+    
+      <SearchInput
         ref={text}
         placeholder='Search albums'
         type='text'
         onChange={onChange}
       />
-    </form>
+    
   );
 };
 

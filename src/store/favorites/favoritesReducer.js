@@ -1,13 +1,15 @@
-import {FAVORITE_ADD, FAVORITE_REMOVE} from './favoritesActionTypes'
+import { FAVORITE_ADD } from './favoritesActionTypes';
 
- const favoritesReducer = (state = [], action) => {
-    switch (action.type) {
-        case FAVORITE_ADD:
-            return {
-                ...state
-            }
-    }
-   return state
-}
-
-export default favoritesReducer
+export default (state = {}, action) => {
+  switch (action.type) {
+    case FAVORITE_ADD:
+      const newState = { ...state };
+      if (state[action.payload]) {
+        delete newState[action.payload];
+      } else {
+        newState[action.payload] = true;
+      }
+      return newState;
+  }
+  return state;
+};
