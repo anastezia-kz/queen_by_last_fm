@@ -3,16 +3,23 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getAlbums, sortAlbums } from '../../store/albums/albumsActions';
 import Search from '../../components/albums/Search';
-import {
-  AlbumsWrapper,
-  Controls,
-  Button,
-  ContentWrapper,
-} from '../styled/MainWrapper';
+import styled from 'styled-components';
+import { Button, ContentWrapper } from '../styled/MainWrapper';
+
+
+//styles
+const AlbumsWrapper = styled.li`
+  display: flex;
+  align-content: space-around;
+  justify-content: flex-start;
+`;
+const Controls = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
 
 const AlbumsList = ({ artistName }) => {
   const dispatch = useDispatch();
-
 
   const albums = useSelector((state) => state.albums.searchedAlbums);
 

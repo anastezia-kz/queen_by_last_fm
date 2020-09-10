@@ -8,7 +8,7 @@ export const BodyWrapper = styled.div`
   font-size: 1rem;
   line-height: 1.6;
   color: #2d2b28;
-  background: url(${Queen_bg}) no-repeat center fixed;
+  background: url(${Queen_bg}) no-repeat center ;
   background-repeat: no-repeat;
   background-size: cover;
 `;
@@ -19,15 +19,14 @@ export const GridWrapper = styled.div`
   grid-gap: 2rem;
 `;
 
-export const AlbumsWrapper = styled.li`
-  display: flex;
-  align-content: space-around;
-  justify-content: flex-start;
-`;
+export const ContentWrapper = styled.div`
+  height: 50vh;
+  overflow: auto;
+  padding: 5%;
+  margin: 35% 10% 0 10%;
+  background-color: rgba(241, 168, 63, 0.8);
+  border-radius: 50px 20px;
 
-export const Controls = styled.div`
-  display: flex;
-  justify-content: space-around;
 `;
 
 export const Button = styled.button`
@@ -48,19 +47,4 @@ export const Button = styled.button`
   }
 `;
 
-export const SearchInput = styled.input`
-  background: #fff;
-  color: #333;
-  padding: 0.4rem 1.3rem;
-  border: #ff5733 solid 2px;
-  border-radius: 15px;
-`;
 
-export const ContentWrapper = styled.div`
-  height: 60vh;
-  overflow: auto;
-  padding: 5%;
-  margin: 35% 10% 20% 10%;
-  background-color: rgba(241, 168, 63, 0.8);
-  border-radius: 50px 20px;
-`;

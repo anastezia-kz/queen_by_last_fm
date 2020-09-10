@@ -17,14 +17,16 @@ const getAlbums = (artistName) => async (dispatch) => {
 
 const sortAlbums = () => ({
     type:SORT_ALBUMS
-})
+});
+
 
 const searchAlbums = (value) => ({
     type:SEARCH_ABLUMS,
     payload: value
-})
+});
 
 const clearSearch = () => ({
     type:CLEAR_SEARCH
-})
+});
+
 export { getAlbums, sortAlbums, searchAlbums, clearSearch };

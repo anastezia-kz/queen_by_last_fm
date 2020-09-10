@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Spinner from './Spinner';
-
 import axios from 'axios';
 import AlbumsList from '../albums/AlbumsList';
-
 import { GridWrapper, ContentWrapper } from '../styled/MainWrapper';
 
 const Home = () => {
