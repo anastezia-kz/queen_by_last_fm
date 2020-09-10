@@ -3,9 +3,10 @@ import Spinner from './Spinner';
 import axios from 'axios';
 import AlbumsList from '../albums/AlbumsList';
 import { GridWrapper, ContentWrapper } from '../styled/MainWrapper';
+import {artistName} from '../../appConstants'
 
 const Home = () => {
-  const artistName = 'Queen';
+  
   const [artistInfo, setArtistInfo] = useState({});
   const [loading, setLoading] = useState(true);
 
